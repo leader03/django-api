@@ -21,3 +21,7 @@ class TestimonialSerializer(serializers.ModelSerializer):
         model = Testimonial
         fields = '__all__'
 
+class TaskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        fields = '__all__'

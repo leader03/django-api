@@ -15,5 +15,6 @@ urlpatterns = [
     path('login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('about',AboutData),
     path('services',ServiceData),
-    path('testimonial',TestimonialData)
+    path('testimonial',TestimonialData),
+    path('task',TaskData)
 ]

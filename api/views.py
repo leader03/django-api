@@ -76,3 +76,9 @@ def TestimonialData(request):
     data = Testimonial.objects.all()
     serializer = TestimonialSerializer(data, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def TaskData(request):
+    data = Task.objects.all()
+    serializer = TaskSerializer(data, many=True)
+    return Response(serializer.data)
