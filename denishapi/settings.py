@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-5n3*#r^e=-tbqy1@69%!svu$w+5$%r=5d02x=c0dirr_g1rkuk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['exp://192.168.16.102:19000','127.0.0.1']
 
 
 # Application definition
@@ -34,10 +34,14 @@ INSTALLED_APPS = [
     "corsheaders",
 ]
 
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     )
+# }
+
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    'DEFAULT_RENDERER_CLASSES':('rest_framework.renderers.JSONRenderer',)
 }
 
 SIMPLE_JWT = {

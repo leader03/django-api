@@ -22,5 +22,14 @@ class Task(models.Model):
     name = models.CharField(max_length=50)
     completed = models.BooleanField(default=False)
 
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="media/category")
+    not_available = models.BooleanField(default= False)
+
+class Product(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    name = models.CharField(max_length=50)
+    price = models.FloatField()
     
 
